@@ -211,7 +211,7 @@ const CustomerList = () => {
         };
 
         return (
-            <div className="fixed inset-0 z-[200] flex items-start justify-center" style={{ padding: '1.5rem', paddingTop: '10vh' }}>
+            <div className="fixed inset-0 z-[200] flex items-start justify-center p-4 sm:p-6 pt-[10vh] sm:pt-[10vh]">
 
                 {/* Animated CSS keyframes */}
                 <style>{`
@@ -280,7 +280,7 @@ const CustomerList = () => {
                         {/* Status switcher */}
                         <div className="bg-slate-50 dark:bg-slate-800/60 rounded-2xl border border-slate-200 dark:border-slate-700 p-4">
                             <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">Change Status</p>
-                            <div className="grid grid-cols-3 gap-2">
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                                 {[
                                     { val: 'Pending',   Ic: Clock,        label: 'Pending'   },
                                     { val: 'Completed', Ic: CheckCircle2, label: 'Completed' },
@@ -302,7 +302,7 @@ const CustomerList = () => {
                         </div>
 
                         {/* Info cards */}
-                        <div className="grid grid-cols-2 gap-3">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             {[
                                 { icon: CalendarDays, label: 'Entry Date',  value: selectedCustomer.entryDate || '—', grad: 'from-blue-400 to-indigo-500' },
                                 { icon: Monitor,     label: 'Device Model', value: selectedCustomer.modelName,                grad: 'from-pink-500 to-rose-500' },
@@ -332,7 +332,7 @@ const CustomerList = () => {
                         </div>
 
                         {/* Action buttons */}
-                        <div className="flex gap-3 pt-1">
+                        <div className="flex flex-col sm:flex-row gap-3 pt-1">
                             <button onClick={() => { setSelectedCustomer(null); setEditingCustomer(selectedCustomer); }}
                                 className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-white py-3 rounded-2xl font-bold text-sm shadow-lg shadow-amber-400/25 transition-all duration-200 hover:scale-105 hover:shadow-xl hover:shadow-amber-400/35 active:scale-95">
                                 <Edit3 className="w-4 h-4" /> Edit Record
@@ -372,7 +372,7 @@ const CustomerList = () => {
         ];
 
         return (
-            <div className="fixed inset-0 z-[200] flex items-start justify-center" style={{ padding: '1.5rem', paddingTop: '10vh' }}>
+            <div className="fixed inset-0 z-[200] flex items-start justify-center p-4 sm:p-6 pt-[10vh] sm:pt-[10vh]">
 
                 {/* Animated CSS keyframes */}
                 <style>{`
@@ -438,7 +438,7 @@ const CustomerList = () => {
                         {/* Status */}
                         <div className="bg-slate-50 dark:bg-slate-800/60 rounded-2xl border border-slate-200 dark:border-slate-700 p-4">
                             <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">Service Status</p>
-                            <div className="grid grid-cols-3 gap-2">
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                                 {statusOpts.map(({ val, Ic, grad, shadow }) => {
                                     const active = (editingCustomer.status || 'Pending') === val;
                                     return (
@@ -469,7 +469,7 @@ const CustomerList = () => {
                         </div>
 
                         {/* Submit row */}
-                        <div className="flex gap-3 pb-1">
+                        <div className="flex flex-col sm:flex-row gap-3 pb-1">
                             <button type="submit"
                                 className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-500 hover:to-rose-400 text-white py-3 rounded-2xl text-sm font-black uppercase tracking-wider shadow-lg shadow-pink-500/25 transition-all duration-200 hover:shadow-xl hover:shadow-pink-500/35 hover:scale-105 active:scale-95">
                                 <CheckCircle2 className="w-4 h-4" /> Update Record
@@ -519,7 +519,7 @@ const CustomerList = () => {
                         </button>
 
                         {showExportMenu && (
-                            <div className="absolute left-0 top-full mt-2 w-72 bg-white dark:bg-[#0f172a] rounded-2xl shadow-2xl shadow-slate-900/20 border border-slate-200 dark:border-slate-700 z-50 overflow-hidden"
+                            <div className="absolute left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-auto sm:right-0 top-full mt-2 w-[calc(100vw-2rem)] sm:w-72 max-w-sm bg-white dark:bg-[#0f172a] rounded-2xl shadow-2xl shadow-slate-900/20 border border-slate-200 dark:border-slate-700 z-50 overflow-hidden"
                                 style={{ animation: 'modalIn 0.2s cubic-bezier(0.34,1.56,0.64,1) both' }}>
 
                                 {/* Preset filters */}
