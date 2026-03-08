@@ -37,7 +37,9 @@ const EntryForm = () => {
             });
             setTimeout(() => setSuccess(false), 3000);
         } catch (err) {
-            console.error(err);
+            console.error('Submit Error:', err);
+            const errMsg = err.response?.data?.error || err.message || 'Unknown network error';
+            alert(`Failed to register customer!\n\nReason: ${errMsg}\n\nPlease check Vercel Environment Variables & MongoDB Atlas IP Access.`);
         } finally {
             setLoading(false);
         }
