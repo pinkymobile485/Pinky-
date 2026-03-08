@@ -23,7 +23,8 @@ const EntryForm = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            await axios.post(`${process.env.REACT_APP_API_URL || 'http://localhost:5000/api'}/customers`, formData);
+            const API_URL = process.env.REACT_APP_API_URL || (process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:5000/api');
+            await axios.post(`${API_URL}/customers`, formData);
             setSuccess(true);
             setFormData({
                 customerName: '',

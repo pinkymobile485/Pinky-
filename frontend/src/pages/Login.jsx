@@ -20,7 +20,8 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL || 'http://localhost:5000/api'}/login`, { username, password });
+      const API_URL = process.env.REACT_APP_API_URL || (process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:5000/api');
+      const response = await axios.post(`${API_URL}/login`, { username, password });
       if (response.data.success) {
         localStorage.setItem('isLoggedIn', 'true');
         navigate('/dashboard/entry');
