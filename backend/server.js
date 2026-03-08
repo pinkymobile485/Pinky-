@@ -18,7 +18,7 @@ app.use((req, res, next) => {
 });
 
 // 3. DB Connect
-mongoose.connect('mongodb://127.0.0.1:27017/mern_project')
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/mern_project')
     .then(() => console.log('✅ DB Connected'))
     .catch(err => console.error('❌ DB Error:', err));
 
