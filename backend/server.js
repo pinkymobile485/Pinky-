@@ -126,4 +126,8 @@ app.use((req, res) => {
     res.status(404).send(`Cannot ${req.method} ${req.url}`);
 });
 
-app.listen(PORT, () => console.log(`🚀 Server on ${PORT}`));
+if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
+    app.listen(PORT, '0.0.0.0', () => console.log(`🚀 Server on ${PORT} (Accessible via Network)`));
+}
+
+module.exports = app;
