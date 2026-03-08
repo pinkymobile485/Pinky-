@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { User, Phone, Laptop, ClipboardList, Lock, IndianRupee, Star, CheckCircle2, PlusCircle } from 'lucide-react';
+import { User, Phone, Laptop, ClipboardList, Lock, IndianRupee, Star, CheckCircle2, PlusCircle, Calendar } from 'lucide-react';
 
 const EntryForm = () => {
     const [formData, setFormData] = useState({
@@ -10,7 +10,8 @@ const EntryForm = () => {
         problemDescription: '',
         devicePassword: '',
         approximateAmount: '',
-        attendedValue: ''
+        attenderName: '',
+        entryDate: ''
     });
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
@@ -33,7 +34,8 @@ const EntryForm = () => {
                 problemDescription: '',
                 devicePassword: '',
                 approximateAmount: '',
-                attendedValue: ''
+                attenderName: '',
+                entryDate: ''
             });
             setTimeout(() => setSuccess(false), 3000);
         } catch (err) {
@@ -51,7 +53,8 @@ const EntryForm = () => {
         { id: 'modelName', label: 'Model Name', icon: Laptop, type: 'text', placeholder: 'MacBook Pro M2' },
         { id: 'devicePassword', label: 'Device Password', icon: Lock, type: 'text', placeholder: '••••••••' },
         { id: 'approximateAmount', label: 'Approximate Amount', icon: IndianRupee, type: 'number', placeholder: '1000' },
-        { id: 'attendedValue', label: 'Attended Value', icon: Star, type: 'text', placeholder: 'High Priority' }
+        { id: 'attenderName', label: 'Attender Name', icon: Star, type: 'text', placeholder: 'Jane Smith' },
+        { id: 'entryDate', label: 'Entry Date', icon: Calendar, type: 'date', placeholder: '' }
     ];
 
     return (

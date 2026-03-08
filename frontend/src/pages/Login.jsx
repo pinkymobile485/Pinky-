@@ -46,7 +46,7 @@ const Login = () => {
         {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
       </button>
 
-      <div className="w-full max-sm mb-4"></div>
+
 
       <div className="w-full max-w-sm bg-white dark:bg-[#0f172a]/80 backdrop-blur-2xl border border-slate-200 dark:border-white/10 rounded-[2rem] shadow-2xl overflow-hidden animate-fade-in relative z-10 transition-colors">
         <div className="p-6 lg:p-10">

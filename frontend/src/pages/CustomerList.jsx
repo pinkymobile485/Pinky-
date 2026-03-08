@@ -87,7 +87,7 @@ const CustomerList = () => {
                 ['Device Model', customer.modelName],
                 ['Password', customer.devicePassword || 'N/A'],
                 ['Est. Amount', `Rs. ${customer.approximateAmount}`],
-                ['Attended Value', customer.attendedValue],
+                ['Attender Name', customer.attenderName],
                 ['Status', customer.status || 'Pending'],
                 ['Problem', customer.problemDescription],
             ],
@@ -304,10 +304,11 @@ const CustomerList = () => {
                         {/* Info cards */}
                         <div className="grid grid-cols-2 gap-3">
                             {[
+                                { icon: CalendarDays, label: 'Entry Date',  value: selectedCustomer.entryDate || '—', grad: 'from-blue-400 to-indigo-500' },
                                 { icon: Monitor,     label: 'Device Model', value: selectedCustomer.modelName,                grad: 'from-pink-500 to-rose-500' },
                                 { icon: Lock,        label: 'Password',     value: selectedCustomer.devicePassword || 'None', grad: 'from-violet-500 to-purple-600' },
                                 { icon: IndianRupee, label: 'Est. Amount',  value: `₹${selectedCustomer.approximateAmount}`,  grad: 'from-emerald-400 to-teal-500' },
-                                { icon: Star,        label: 'Priority',     value: selectedCustomer.attendedValue || '—',     grad: 'from-amber-400 to-orange-500' },
+                                { icon: Star,        label: 'Attender Name',     value: selectedCustomer.attenderName || '—',     grad: 'from-amber-400 to-orange-500' },
                             ].map(({ icon: Ic, label, value, grad }) => (
                                 <div key={label} className="bg-white dark:bg-slate-800/60 rounded-2xl border border-slate-100 dark:border-slate-700 p-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
                                     <div className={`w-8 h-8 rounded-xl bg-gradient-to-br ${grad} flex items-center justify-center mb-2 shadow`}>
@@ -360,7 +361,8 @@ const CustomerList = () => {
             { key: 'modelName',        label: 'Device Model',    icon: Monitor,     type: 'text' },
             { key: 'devicePassword',   label: 'Device Password', icon: Lock,        type: 'text' },
             { key: 'approximateAmount', label: 'Estimate (₹)',   icon: IndianRupee, type: 'number' },
-            { key: 'attendedValue',    label: 'Attended Value',  icon: Star,        type: 'text' },
+            { key: 'attenderName',      label: 'Attender Name',  icon: Star,        type: 'text' },
+            { key: 'entryDate',        label: 'Entry Date',      icon: CalendarDays, type: 'date' },
         ];
 
         const statusOpts = [

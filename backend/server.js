@@ -30,7 +30,8 @@ const Customer = mongoose.model('Customer', new mongoose.Schema({
     problemDescription: String,
     devicePassword: String,
     approximateAmount: Number,
-    attendedValue: String,
+    attenderName: String,
+    entryDate: String,
     status: { type: String, default: 'Pending', enum: ['Pending', 'Completed', 'Delivery'] }
 }, { timestamps: true }));
 
