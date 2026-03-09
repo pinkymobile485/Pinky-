@@ -11,6 +11,13 @@
       "config": {
         "distDir": "build"
       }
+    },
+    {
+      "src": "mobile/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
     }
   ],
   "routes": [
@@ -19,12 +26,26 @@
       "dest": "/backend/server.js"
     },
     {
+      "src": "/mobile/assets/(.*)",
+      "dest": "/mobile/assets/$1"
+    },
+    {
+      "src": "/mobile/(.*)",
+      "dest": "/mobile/index.html",
+      "continue": true
+    },
+    {
       "src": "/static/(.*)",
       "dest": "/frontend/static/$1"
     },
     {
-      "src": "/(.*\\..*)",
-      "dest": "/frontend/$1"
+      "src": "/(.*\\.(js|css|png|jpg|jpeg|svg|ico|json|txt))",
+      "dest": "/frontend/$1",
+      "continue": true
+    },
+    {
+      "src": "/mobile",
+      "dest": "/mobile/index.html"
     },
     {
       "src": "/(.*)",
