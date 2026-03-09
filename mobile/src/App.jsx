@@ -89,7 +89,7 @@ const AppRoutes = () => {
 const App = () => {
   return (
     <AuthProvider>
-      <Router basename="/mobile">
+      <Router>
         <AppRoutes />
       </Router>
     </AuthProvider>
