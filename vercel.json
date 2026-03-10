@@ -16,9 +16,9 @@
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/backend/server.js" },
-    { "src": "/mobile/(.*)", "dest": "/mobile/build/$1" },
-    { "src": "/mobile", "dest": "/mobile/build/index.html" },
-    { "src": "/(.*\\..*)", "dest": "/frontend/build/$1" },
-    { "src": "/(.*)", "dest": "/frontend/build/index.html" }
+    { "src": "/mobile/(.*)", "dest": "/mobile/$1", "continue": true },
+    { "src": "/mobile", "dest": "/mobile/index.html" },
+    { "src": "/(.*)", "dest": "/frontend/$1", "continue": true },
+    { "src": "/(.*)", "dest": "/frontend/index.html" }
   ]
 }
