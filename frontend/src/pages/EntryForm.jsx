@@ -48,12 +48,12 @@ const EntryForm = () => {
     };
 
     const inputFields = [
-        { id: 'customerName', label: 'Customer Name', icon: User, type: 'text', placeholder: 'John Doe' },
-        { id: 'phoneNumber', label: 'Phone Number', icon: Phone, type: 'tel', placeholder: '+1 234 567 890' },
-        { id: 'modelName', label: 'Model Name', icon: Laptop, type: 'text', placeholder: 'MacBook Pro M2' },
-        { id: 'devicePassword', label: 'Device Password', icon: Lock, type: 'text', placeholder: '••••••••' },
-        { id: 'approximateAmount', label: 'Approximate Amount', icon: IndianRupee, type: 'number', placeholder: '1000' },
-        { id: 'attenderName', label: 'Attender Name', icon: Star, type: 'text', placeholder: 'Jane Smith' },
+        { id: 'customerName', label: 'Customer Name', icon: User, type: 'text', placeholder: '' },
+        { id: 'phoneNumber', label: 'Phone Number', icon: Phone, type: 'tel', placeholder: '' },
+        { id: 'modelName', label: 'Model Name', icon: Laptop, type: 'text', placeholder: '' },
+        { id: 'devicePassword', label: 'Device Password', icon: Lock, type: 'text', placeholder: '' },
+        { id: 'approximateAmount', label: 'Approximate Amount', icon: IndianRupee, type: 'number', placeholder: '' },
+        { id: 'attenderName', label: 'Attender Name', icon: Star, type: 'text', placeholder: '' },
         { id: 'entryDate', label: 'Entry Date', icon: Calendar, type: 'date', placeholder: '' }
     ];
 
