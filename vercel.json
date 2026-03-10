@@ -14,45 +14,11 @@
       "use": "@vercel/static-build"
     }
   ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/backend/server.js"
-    },
-    {
-      "src": "/mobile/(.*)",
-      "dest": "/mobile/$1",
-      "continue": true
-    },
-    {
-      "src": "/mobile",
-      "dest": "/mobile/index.html"
-    },
-    {
-      "src": "/static/(.*)",
-      "dest": "/frontend/static/$1",
-      "continue": true
-    },
-    {
-      "src": "/favicon.ico",
-      "dest": "/frontend/favicon.ico"
-    },
-    {
-      "src": "/manifest.json",
-      "dest": "/frontend/manifest.json"
-    },
-    {
-      "src": "/logo(.*).png",
-      "dest": "/frontend/logo$1.png"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/frontend/$1",
-      "continue": true
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/frontend/index.html"
-    }
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/backend/server.js" },
+    { "source": "/mobile/(.*\\..*)", "destination": "/mobile/$1" },
+    { "source": "/mobile(.*)", "destination": "/mobile/index.html" },
+    { "source": "/(.*\\..*)", "destination": "/frontend/$1" },
+    { "source": "/(.*)", "destination": "/frontend/index.html" }
   ]
 }
