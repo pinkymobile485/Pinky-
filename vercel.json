@@ -14,11 +14,11 @@
       "use": "@vercel/static-build"
     }
   ],
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/backend/server.js" },
-    { "source": "/mobile/(.*)", "destination": "/mobile/$1" },
-    { "source": "/mobile", "destination": "/mobile/index.html" },
-    { "source": "/(.*\\..*)", "destination": "/frontend/$1" },
-    { "source": "/(.*)", "destination": "/frontend/index.html" }
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/backend/server.js" },
+    { "src": "/mobile/(.*)", "dest": "/mobile/build/$1" },
+    { "src": "/mobile", "dest": "/mobile/build/index.html" },
+    { "src": "/(.*\\..*)", "dest": "/frontend/build/$1" },
+    { "src": "/(.*)", "dest": "/frontend/build/index.html" }
   ]
 }
